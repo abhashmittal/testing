@@ -5,8 +5,6 @@
     <link rel="mask-icon" type="image/png" href="assets/icon.png">
     <title>Heisswein</title>
     <meta name="description" content="Sauerteigbrot & Naturwein (au übr dgass) & einfache Gerichte — Mittwoch bis Samstag von 16 bis 24 Uhr — Konradstrasse 40, 8005 Zürich">
-    <meta name="robots" content="follow, index">
-    <meta name="googlebot" content="follow, index">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <?= css('assets/style/main.css') ?>
     <?= script('assets/script.js') ?>

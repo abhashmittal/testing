@@ -242,25 +242,51 @@ text-decoration: none;
 
 @media screen and (min-width: 480px) and (max-width: 2559px) {
 
-  #pop-up {
-    z-index: 999;
+  #pop {
+    display: block;
+    z-index: 5;
     height: 100dvh;
     width: 100dvw;
     background-color: rgb(0 0 0 / 50%);
     position: fixed;
   }
 
-  #pop-up.active {
-    display: block;
+  #pop.active {
+    z-index: 0;
+    transform: all ease 0.25s;
+  }
+
+  #button4{
+    position: fixed;
+    right: 4%;
+    top: 1%;
+    transform: scale(2);
+    cursor: pointer;
+  }
+
+  #button4:hover {
+    transform: scale(2.1);
+    transition: 0.125s;
+    cursor: pointer;
   }
 
   .popupbg {
     position: fixed;
     height: 90dvh;
-    z-index: 1000;
+    z-index: 5;
     margin-top: 50dvh;
     margin-left: 50dvw;
     transform: translate(-50%, -50%);
+}
+
+.popupbg.active {
+  position: fixed;
+  height: 90dvh;
+  z-index: 5;
+  margin-top: -50dvh;
+  margin-left: 50dvw;
+  transform: translate(-50%, -50%);
+  transition: all ease 0.3s;
 }
 
 .popupbg img {
@@ -268,31 +294,40 @@ text-decoration: none;
 }
 
 .schrift {
-  mix-blend-mode: exclusion;
+  mix-blend-mode: multiply;
   position: fixed;
-  z-index: 1001;
-  width: 90%;
+  z-index: 5;
+  width: 85%;
   padding-bottom: 10dvh;
-  padding-top: 15dvh;
+  padding-top: 18dvh;
   margin-left: 50%;
   transform: translate(-50%,0);
 }
 
-  .show {
+#sitenav {
+  opacity: 0%;
+}
+
+#sitenav.active{
+  opacity: 100%;
+  transition: all ease 0.75s;
+}
+
+.show {
     margin-top: 100dvh;
     opacity: 0;
     transition: all ease 0.5s;
   }
   
-  .hide {
+.hide {
     margin-top: -100dvh;
   }
   
-  #slide {
+#slide {
     width: 100dvw;
     height: 100dvh;
     position: absolute;
-    z-index: 3;
+    z-index: 7;
     display: flex;
     align-items: center;
     vertical-align: center;
@@ -304,7 +339,7 @@ text-decoration: none;
   }
   
   .konzept {
-    z-index: 4;
+    z-index: 7;
     margin: auto;
     width: 60dvw;
     cursor: default;
@@ -358,7 +393,7 @@ text-decoration: none;
     position: fixed;
     top: 100dvh;
     background-color: black;
-    z-index: 2;
+    z-index: 5;
     opacity: 0%;
   }
   
@@ -367,9 +402,9 @@ text-decoration: none;
     height: 100dvh;
     position: fixed;
     top: 0;
-    background-color: black;
-    z-index: 2;
-    opacity: 60%;
+    background-color: rgb(0 0 0 / 50%);
+    z-index: 5;
+    opacity: 100%;
   }
   
   #navbar {
@@ -406,7 +441,7 @@ text-decoration: none;
   }
   
   #nav {
-    z-index: 8;
+    z-index: 9;
     position: fixed;
     top: 1.5dvh;
     right: -75dvw;
@@ -444,7 +479,7 @@ text-decoration: none;
     top: 1.5dvh;
     position: fixed;
     margin-left: 50dvw;
-    z-index: 10;
+    z-index: 11;
     background-color: #0000ff;
     color: white;
     transform-origin: left center;
@@ -462,7 +497,7 @@ text-decoration: none;
     top: 1.5dvh;
     position: fixed;
     margin-left: 2.5dvw;
-    z-index: 10;
+    z-index: 11;
     background-color: #ff5100;
     transform-origin: center center;
     transform: translate(0, 0);
@@ -480,7 +515,7 @@ text-decoration: none;
     top: 1.5dvh;
     position: fixed;
     margin-left: 2.5dvw;
-    z-index: 10;
+    z-index: 11;
     background-color: #ff5100;
     transform-origin: center center;
     transform: scale(1.03) translate(0, 0);
@@ -495,7 +530,7 @@ text-decoration: none;
   }
   
   #button2 {
-    z-index: 10;
+    z-index: 11;
     background-color: #0000ff;
     color: white;
     border-radius: 25dvw;
@@ -508,7 +543,7 @@ text-decoration: none;
   }
 
   #button2:hover {
-    z-index: 10;
+    z-index: 11;
     background-color: #0000ff;
     color: white;
     border-radius: 25dvw;
@@ -533,7 +568,7 @@ text-decoration: none;
   
   #button3 {
     margin-left: auto;
-    z-index: 10;
+    z-index: 11;
     background-color: #0000ff;
     color: white;
     border-radius: 25dvw;
@@ -546,7 +581,7 @@ text-decoration: none;
 
   #button3:hover {
     margin-left: auto;
-    z-index: 10;
+    z-index: 11;
     background-color: #0000ff;
     color: white;
     border-radius: 25dvw;
@@ -569,9 +604,6 @@ text-decoration: none;
   }
   
   
-  
-  
-  
   }
 
   @media screen and (min-width: 2560px) {
@@ -590,7 +622,7 @@ text-decoration: none;
       width: 100dvw;
       height: 100dvh;
       position: absolute;
-      z-index: 3;
+      z-index: 7;
       display: flex;
       align-items: center;
       vertical-align: center;

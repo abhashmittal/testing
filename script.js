@@ -15,7 +15,16 @@ var info = document.querySelector("#info")
 var nav = document.querySelector("#nav")
 var view = document.querySelector("#viewer")
 var overlay = document.querySelector("#overlay")
-var popup = document.querySelector("#pop-up")
+var popup = document.querySelector("#pop")
+var closepopup = document.querySelector("#button4")
+var sitenav = document.querySelector("#sitenav")
+var karte = document.querySelector(".popupbg")
+
+closepopup.addEventListener("click", function() {
+  popup.classList.toggle('active');
+  sitenav.classList.toggle('active');
+  karte.classList.toggle('active');
+});
 
 mybtn.addEventListener("click", function() {
 
@@ -24,6 +33,7 @@ mybtn.addEventListener("click", function() {
   info.classList.toggle('active');
   nav.classList.toggle('active');
   overlay.classList.toggle('active')
+
 });
 
 slide.addEventListener("click", function(){
@@ -55,6 +65,22 @@ async function checkImageExists(imagePath) {
   } catch (error) {
     return false; // false if there was an error (e.g., 404)
   }
-};
+}
 
+// Function to toggle HTML based on image existence
+async function toggleContentBasedOnImage(imagePath) {
+  const contentDiv = document.getElementById('annonce');
+  const imageExists = await checkImageExists(imagePath);
+
+  if (imageExists) {
+ 
+  } else {
+    popup.classList.toggle('active');
+    sitenav.classList.toggle('active');
+    karte.classList.toggle('active');
+  }
+}
+
+// Call the function with the path to the image
+toggleContentBasedOnImage('/assets/popup/scan.jpg');
 

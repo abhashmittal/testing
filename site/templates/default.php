@@ -8,8 +8,8 @@
     <meta name="robots" content="follow, index">
     <meta name="googlebot" content="follow, index">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style/main.css"/>
-    <script type="module" src="script.js"></script>
+    <?= css('assets/style/main.css') ?>
+    <?= script('assets/script.js') ?>
     <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.147/build/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uevent@2/browser.min.js"></script>

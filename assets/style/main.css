@@ -1,0 +1,829 @@
+@import "reset.css";
+@import "https://cdn.jsdelivr.net/npm/photo-sphere-viewer@4/dist/photo-sphere-viewer.min.css";
+
+@font-face {
+  font-family: Medium;
+  src: url(../assets/fonts/HelveticaNeue-Medium-11.woff) format("woff");
+}
+
+@font-face {
+  font-family: Windsor;
+  src: url(../assets/fonts/WindsorBT-Roman.woff) format("woff");
+}
+
+html {
+  overflow: hidden;
+}
+
+
+@media screen and (max-width: 480px) {
+
+.show {
+  margin-top: 100dvh;
+  opacity: 0;
+  transition: all ease 0.5s;
+}
+
+.hide {
+  margin-top: -100dvh;
+}
+
+#slide {
+  width: 100dvw;
+  height: 100dvh;
+  position: absolute;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  vertical-align: center;
+  overflow: scroll;
+  padding-top: 16vh;
+  padding-bottom: 8vh;
+  transition: all ease 0.5s;
+  /* background-color: rgba(0,0,0,40%); */
+}
+
+.konzept {
+  margin: auto;
+  width: 95dvw;
+}
+
+.konzept img {
+  mix-blend-mode: screen;
+  padding-top: 1.5dvh;
+  padding-bottom: 1.5dvh;
+}
+
+.as {
+  width: 60%;
+  mix-blend-mode: screen;
+}
+
+
+p{
+  font-family: Medium;
+  color: white;
+  font-size: 5.5vw;
+  text-align: center;
+  line-height: 110%;
+}
+
+h1{
+  font-family: Windsor;
+  color: white;
+  font-size: 6.5vw;
+  line-height: 105%;
+}
+
+a{
+  color: white;
+}
+
+a:hover {
+  color: blue;
+}
+
+#viewer {
+  width: 100dvw;
+  height: 100dvh;
+  transition: all ease 1s;
+  z-index: 10;
+}
+
+#overlay {
+  z-index: 1;
+  width: 100dvw;
+  height: 100dvh;
+  position: fixed;
+  top: 100dvh;
+  background-color: black;
+  opacity: 0%;
+}
+
+#overlay.active {
+  z-index: 1;
+  width: 100dvw;
+  height: 100dvh;
+  position: fixed;
+  top: 0;
+  background-color: black;
+  opacity: 60%;
+}
+
+#navbar {
+  display: none;
+}
+
+#info {
+  z-index: 100;
+  position: absolute;
+  bottom: 1.5dvh;
+  width: 100dvw;
+  overflow: hidden;
+  opacity: 100;
+  transition: all ease 2s;
+}
+
+#info.active {
+  z-index: 100;
+  position: absolute;
+  bottom: 1.5dvh;
+  width: 100dvw;
+  overflow: hidden;
+  opacity: 0;
+  transition: none;
+}
+
+.psv-navbar {
+  display: none; 
+}
+
+.psv-loader {
+  display: none;
+}
+
+#nav {
+  z-index: 8;
+  position: fixed;
+  top: 1.5dvh;
+  right: -75dvw;
+  display: flex;
+  transition: all ease 0.5s;
+}
+
+#nav.active {
+  position: fixed;
+  top: 1.5dvh;
+  right: 2.5dvw;
+  display: flex;
+  transition: all ease 0.5s;
+}
+
+#button {
+  top: 1.5dvh;
+  position: fixed;
+  margin-left: 50dvw;
+  z-index: 10;
+  background-color: #0000ff;
+  color: white;
+  transform: translate(-50%, 0);
+  border-radius: 25dvw;
+  padding-top: 1dvh;
+  padding-bottom: 1dvh;
+  padding-left: 2dvh;
+  padding-right: 2dvh;
+  transition: all ease 0.5s;
+}
+
+#button.active {
+  top: 1.5dvh;
+  position: fixed;
+  margin-left: 2.5dvw;
+  z-index: 10;
+  background-color: #ff5100;
+  transform: translate(0, 0);
+  color: white;
+  border-radius: 25dvw;
+  padding-top: 1dvh;
+  padding-bottom: 1dvh;
+  padding-left: 2dvh;
+  padding-right: 2dvh;
+  transition: all ease 0.5s;
+}
+
+#button2 {
+  z-index: 10;
+  background-color: #0000ff;
+  color: white;
+  border-radius: 25dvw;
+  padding-top: 1dvh;
+  padding-bottom: 1dvh;
+  padding-left: 2dvh;
+  padding-right: 2dvh;
+  transition: all ease 0.5s;
+  margin-right: 1dvw;
+}
+
+#button2 a {
+  text-decoration: none;
+}
+
+#button2 a:hover{
+  color: white;
+}
+
+#button3 {
+  margin-left: auto;
+  z-index: 10;
+  background-color: #0000ff;
+  color: white;
+  border-radius: 25dvw;
+  padding-top: 1dvh;
+  padding-bottom: 1dvh;
+  padding-left: 2dvh;
+  padding-right: 2dvh;
+  transition: all ease 0.5s;
+  transition: all ease 1s;
+}
+
+#button3 a {
+text-decoration: none;
+}
+
+#button3 a:hover {
+  color: white;
+}
+
+
+
+
+
+}
+
+@media screen and (min-width: 480px) and (max-width: 2559px) {
+
+  .show {
+    margin-top: 100dvh;
+    opacity: 0;
+    transition: all ease 0.5s;
+  }
+  
+  .hide {
+    margin-top: -100dvh;
+  }
+  
+  #slide {
+    width: 100dvw;
+    height: 100dvh;
+    position: absolute;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    vertical-align: center;
+    overflow: scroll;
+    padding-top: 25vh;
+    padding-bottom: 8vh;
+    transition: all ease 0.5s;
+    /* background-color: rgba(0,0,0,40%); */
+  }
+  
+  .konzept {
+    z-index: 4;
+    margin: auto;
+    width: 60dvw;
+    cursor: default;
+  }
+  
+  .konzept img {
+    mix-blend-mode: screen;
+    padding-top: 1.5dvh;
+    padding-bottom: 1.5dvh;
+  }
+  
+  .as {
+    width: 40%;
+    mix-blend-mode: screen;
+  }
+  
+  
+  p{
+    font-family: Medium;
+    color: white;
+    font-size: 1.75vw;
+    text-align: center;
+    line-height: 110%;
+  }
+  
+  h1{
+    font-family: Windsor;
+    color: white;
+    font-size: 3.25vw;
+    line-height: 105%;
+  }
+  
+  a{
+    color: white;
+  }
+  
+  a:hover {
+    color: blue;
+    cursor: pointer;
+  }
+  
+  #viewer {
+    width: 100dvw;
+    height: 100dvh;
+    transition: all ease 1s;
+  }
+  
+  #overlay {
+    width: 100dvw;
+    height: 100dvh;
+    position: fixed;
+    top: 100dvh;
+    background-color: black;
+    z-index: 2;
+    opacity: 0%;
+  }
+  
+  #overlay.active {
+    width: 100dvw;
+    height: 100dvh;
+    position: fixed;
+    top: 0;
+    background-color: black;
+    z-index: 2;
+    opacity: 60%;
+  }
+  
+  #navbar {
+    display: none;
+  }
+  
+  #info {
+    z-index: 100;
+    position: absolute;
+    bottom: 1.5dvh;
+    width: 100dvw;
+    overflow: hidden;
+    opacity: 100;
+    transition: all ease 2s;
+    cursor: default;
+  }
+  
+  #info.active {
+    z-index: 100;
+    position: absolute;
+    bottom: 1.5dvh;
+    width: 100dvw;
+    overflow: hidden;
+    opacity: 0;
+    transition: none;
+  }
+  
+  .psv-navbar {
+    display: none; 
+  }
+  
+  .psv-loader {
+    display: none;
+  }
+  
+  #nav {
+    z-index: 8;
+    position: fixed;
+    top: 1.5dvh;
+    right: -75dvw;
+    display: flex;
+    transition: all ease 0.5s;
+  }
+  
+  #nav.active {
+    position: fixed;
+    top: 1.5dvh;
+    right: 2.5dvw;
+    display: flex;
+    transition: all ease 0.5s;
+  }
+  
+  #button {
+    top: 1.5dvh;
+    position: fixed;
+    margin-left: 50dvw;
+    z-index: 10;
+    background-color: #0000ff;
+    color: white;
+    transform-origin: left center;
+    transform: translate(-50%, 0);
+    border-radius: 25dvw;
+    padding-top: 1dvh;
+    padding-bottom: 1dvh;
+    padding-left: 2dvh;
+    padding-right: 2dvh;
+    transition: all ease 0.25s;
+    cursor: pointer;
+  }
+
+  #button:hover {
+    top: 1.5dvh;
+    position: fixed;
+    margin-left: 50dvw;
+    z-index: 10;
+    background-color: #0000ff;
+    color: white;
+    transform-origin: left center;
+    transform: scale(1.03) translate(-50%, 0);
+    border-radius: 25dvw;
+    padding-top: 1dvh;
+    padding-bottom: 1dvh;
+    padding-left: 2dvh;
+    padding-right: 2dvh;
+    transition: all ease 0.25s;
+    cursor: pointer;
+  }
+  
+  #button.active {
+    top: 1.5dvh;
+    position: fixed;
+    margin-left: 2.5dvw;
+    z-index: 10;
+    background-color: #ff5100;
+    transform-origin: center center;
+    transform: translate(0, 0);
+    color: white;
+    border-radius: 25dvw;
+    padding-top: 1dvh;
+    padding-bottom: 1dvh;
+    padding-left: 2dvh;
+    padding-right: 2dvh;
+    transition: all ease 0.25s;
+    cursor: pointer;
+  }
+
+  #button.active:hover {
+    top: 1.5dvh;
+    position: fixed;
+    margin-left: 2.5dvw;
+    z-index: 10;
+    background-color: #ff5100;
+    transform-origin: center center;
+    transform: scale(1.03) translate(0, 0);
+    color: white;
+    border-radius: 25dvw;
+    padding-top: 1dvh;
+    padding-bottom: 1dvh;
+    padding-left: 2dvh;
+    padding-right: 2dvh;
+    transition: all ease 0.25s;
+    cursor: pointer;
+  }
+  
+  #button2 {
+    z-index: 10;
+    background-color: #0000ff;
+    color: white;
+    border-radius: 25dvw;
+    padding-top: 1dvh;
+    padding-bottom: 1dvh;
+    padding-left: 2dvh;
+    padding-right: 2dvh;
+    transition: all ease 0.25s;
+    margin-right: 1dvw;
+  }
+
+  #button2:hover {
+    z-index: 10;
+    background-color: #0000ff;
+    color: white;
+    border-radius: 25dvw;
+    padding-top: 1dvh;
+    padding-bottom: 1dvh;
+    padding-left: 2dvh;
+    padding-right: 2dvh;
+    transform: scale(1.03);
+    transition: all ease 0.25s;
+    margin-right: 1dvw;
+    cursor: pointer;
+  }
+  
+  #button2 a {
+    text-decoration: none;
+  }
+  
+  #button2 a:hover{
+    color: white;
+    cursor: pointer;
+  }
+  
+  #button3 {
+    margin-left: auto;
+    z-index: 10;
+    background-color: #0000ff;
+    color: white;
+    border-radius: 25dvw;
+    padding-top: 1dvh;
+    padding-bottom: 1dvh;
+    padding-left: 2dvh;
+    padding-right: 2dvh;
+    transition: all ease 0.25s;
+  }
+
+  #button3:hover {
+    margin-left: auto;
+    z-index: 10;
+    background-color: #0000ff;
+    color: white;
+    border-radius: 25dvw;
+    padding-top: 1dvh;
+    padding-bottom: 1dvh;
+    padding-left: 2dvh;
+    padding-right: 2dvh;
+    transform: scale(1.03);
+    transition: all ease 0.25s;
+    cursor: pointer;
+  }
+  
+  #button3 a {
+  text-decoration: none;
+  }
+  
+  #button3 a:hover {
+    color: white;
+    cursor: pointer;
+  }
+  
+  
+  
+  
+  
+  }
+
+  @media screen and (min-width: 2560px) {
+
+    .show {
+      margin-top: 100dvh;
+      opacity: 0;
+      transition: all ease 0.5s;
+    }
+    
+    .hide {
+      margin-top: -100dvh;
+    }
+    
+    #slide {
+      width: 100dvw;
+      height: 100dvh;
+      position: absolute;
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      vertical-align: center;
+      overflow: scroll;
+      padding-top: 25vh;
+      padding-bottom: 8vh;
+      transition: all ease 0.5s;
+    }
+    
+    .konzept {
+      margin: auto;
+      width: 40dvw;
+      cursor: default;
+    }
+    
+    .konzept img {
+      mix-blend-mode: screen;
+      padding-top: 1.5dvh;
+      padding-bottom: 1.5dvh;
+    }
+    
+    .as {
+      width: 25%;
+    }
+    
+    
+    p{
+      font-family: Medium;
+      color: white;
+      font-size: 1vw;
+      text-align: center;
+      line-height: 110%;
+    }
+    
+    h1{
+      font-family: Windsor;
+      color: white;
+      font-size: 1.85vw;
+      line-height: 115%;
+    }
+    
+    a{
+      color: white;
+    }
+    
+    a:hover {
+      color: blue;
+      cursor: pointer;
+    }
+    
+    #viewer {
+      width: 100dvw;
+      height: 100dvh;
+      transition: all ease 1s;
+    }
+    
+    #overlay {
+      width: 100dvw;
+      height: 100dvh;
+      position: fixed;
+      top: 100dvh;
+      background-color: black;
+      z-index: 2;
+      opacity: 0%;
+    }
+    
+    #overlay.active {
+      width: 100dvw;
+      height: 100dvh;
+      position: fixed;
+      top: 0;
+      background-color: black;
+      z-index: 2;
+      opacity: 60%;
+    }
+    
+    #navbar {
+      display: none;
+    }
+    
+    #info {
+      z-index: 100;
+      position: absolute;
+      bottom: 1.5dvh;
+      width: 100dvw;
+      overflow: hidden;
+      opacity: 100;
+      transition: all ease 2s;
+    }
+    
+    #info.active {
+      z-index: 100;
+      position: absolute;
+      bottom: 1.5dvh;
+      width: 100dvw;
+      overflow: hidden;
+      opacity: 0;
+      transition: none;
+    }
+    
+    .psv-navbar {
+      display: none; 
+    }
+    
+    .psv-loader {
+      display: none;
+    }
+    
+    #nav {
+      z-index: 8;
+      position: fixed;
+      top: 1.5dvh;
+      right: -75dvw;
+      display: flex;
+      transition: all ease 0.5s;
+    }
+    
+    #nav.active {
+      position: fixed;
+      top: 1.5dvh;
+      right: 2.5dvw;
+      display: flex;
+      transition: all ease 0.5s;
+    }
+    
+    #button {
+      top: 1.5dvh;
+      position: fixed;
+      margin-left: 50dvw;
+      z-index: 10;
+      background-color: #0000ff;
+      color: white;
+      transform-origin: left center;
+      transform: translate(-50%, 0);
+      border-radius: 25dvw;
+      padding-top: 0.75dvh;
+      padding-bottom: 0.75dvh;
+      padding-left: 1.5dvh;
+      padding-right: 1.5dvh;
+      transition: all ease 0.25s;
+    }
+
+    #button:hover {
+      top: 1.5dvh;
+      position: fixed;
+      margin-left: 50dvw;
+      z-index: 10;
+      background-color: #0000ff;
+      color: white;
+      transform-origin: left center;
+      transform: scale(1.07) translate(-50%, 0);
+      border-radius: 25dvw;
+      padding-top: 0.75dvh;
+      padding-bottom: 0.75dvh;
+      padding-left: 1.5dvh;
+      padding-right: 1.5dvh;
+      transition: all ease 0.25s;
+      cursor: pointer;
+    }
+    
+    #button.active {
+      top: 1.5dvh;
+      position: fixed;
+      margin-left: 2.5dvw;
+      z-index: 10;
+      background-color: #ff5100;
+      transform: translate(0, 0);
+      color: white;
+      border-radius: 25dvw;
+      padding-top: 0.75dvh;
+      padding-bottom: 0.75dvh;
+      padding-left: 1.5dvh;
+      padding-right: 1.5dvh;
+      transition: all ease 0.25s;
+    }
+
+    #button.active:hover {
+      top: 1.5dvh;
+      position: fixed;
+      margin-left: 2.5dvw;
+      z-index: 10;
+      background-color: #ff5100;
+      color: white;
+      transform: scale(1.07);
+      border-radius: 25dvw;
+      padding-top: 0.75dvh;
+      padding-bottom: 0.75dvh;
+      padding-left: 1.5dvh;
+      padding-right: 1.5dvh;
+      transition: all ease 0.25s;
+      cursor: pointer;
+    }
+    
+    #button2 {
+      z-index: 10;
+      background-color: #0000ff;
+      color: white;
+      border-radius: 25dvw;
+      padding-top: 0.75dvh;
+      padding-bottom: 0.75dvh;
+      padding-left: 1.5dvh;
+      padding-right: 1.5dvh;
+      transition: all ease 0.25s;
+      margin-right: 1dvw;
+    }
+
+    #button2:hover {
+      z-index: 10;
+      background-color: #0000ff;
+      color: white;
+      border-radius: 25dvw;
+      transform: scale(1.07);
+      padding-top: 0.75dvh;
+      padding-bottom: 0.75dvh;
+      padding-left: 1.5dvh;
+      padding-right: 1.5dvh;
+      transition: all ease 0.25s;
+      margin-right: 1dvw;
+      cursor: pointer;
+    }
+    
+    #button2 a {
+      text-decoration: none;
+    }
+    
+    #button2 a:hover{
+      color: white;
+      cursor: pointer;
+    }
+    
+    #button3 {
+      margin-left: auto;
+      z-index: 10;
+      background-color: #0000ff;
+      color: white;
+      border-radius: 25dvw;
+      padding-top: 0.75dvh;
+      padding-bottom: 0.75dvh;
+      padding-left: 1.5dvh;
+      padding-right: 1.5dvh;
+      transition: all ease 0.5s;
+    }
+
+    #button3:hover {
+      margin-left: auto;
+      z-index: 10;
+      background-color: #0000ff;
+      color: white;
+      border-radius: 25dvw;
+      transform: scale(1.07);
+      padding-top: 0.75dvh;
+      padding-bottom: 0.75dvh;
+      padding-left: 1.5dvh;
+      padding-right: 1.5dvh;
+      transition: all ease 0.25s;
+      cursor: pointer;
+    }
+    
+    #button3 a {
+    text-decoration: none;
+    }
+    
+    #button3 a:hover {
+      color: white;
+      cursor: pointer;
+    }
+    
+    
+    
+    
+    
+    }

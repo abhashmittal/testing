@@ -15,6 +15,7 @@ var info = document.querySelector("#info")
 var nav = document.querySelector("#nav")
 var view = document.querySelector("#viewer")
 var overlay = document.querySelector("#overlay")
+var popup = document.querySelector("#pop-up")
 
 mybtn.addEventListener("click", function() {
 
@@ -39,12 +40,21 @@ slide.addEventListener("click", function(){
 
 });
 
-
-
 function orientationChange() {
   if(window.addEventListener) {
       window.addEventListener("orientationchange", function() {
           location.reload();
       });
   }
-}
+};
+
+async function checkImageExists(imagePath) {
+  try {
+    const response = await fetch(imagePath, { method: 'HEAD' });
+    return response.ok; // true if the image exists
+  } catch (error) {
+    return false; // false if there was an error (e.g., 404)
+  }
+};
+
+

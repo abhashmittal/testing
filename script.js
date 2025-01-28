@@ -8,9 +8,6 @@ const viewer = new PhotoSphereViewer.Viewer({
   defaultZoomLvl: '20',
 });
 
-// Call the function with the path to the image
-toggleContentBasedOnImage('popup/scan.jpg');
-
 var popup = document.querySelector("#pop")
 var closepopup = document.querySelector("#button4")
 var sitenav = document.querySelector("#sitenav")
@@ -39,6 +36,9 @@ async function toggleContentBasedOnImage(imagePath) {
     karte.classList.toggle('active');
   }
 }
+
+// Call the function with the path to the image
+toggleContentBasedOnImage('popup/scan.jpg');
 
 closepopup.addEventListener("click", function() {
   popup.classList.toggle('active');

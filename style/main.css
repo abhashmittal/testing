@@ -20,7 +20,7 @@ html {
 
   #pop {
     display: block;
-    z-index: 1;
+    z-index: 5;
     height: 100dvh;
     width: 100dvw;
     background-color: rgb(0 0 0 / 50%);
@@ -37,13 +37,11 @@ html {
     right: 4%;
     top: 1%;
     transform: scale(2);
-    cursor: pointer;
   }
 
   #button4:hover {
     transform: scale(2.1);
     transition: 0.125s;
-    cursor: pointer;
   }
 
   .popupbg {
@@ -73,9 +71,9 @@ html {
   mix-blend-mode: multiply;
   position: fixed;
   z-index: 2;
-  width: 90%;
-  padding-bottom: 7.5dvh;
-  padding-top: 18dvh;
+  width: 85%;
+  padding-bottom: 7dvh;
+  padding-top: 14dvh;
   margin-left: 50%;
   transform: translate(-50%,0);
 }
@@ -88,7 +86,6 @@ html {
   opacity: 100%;
   transition: all ease 0.75s;
 }
-
 
 .show {
   margin-top: 100dvh;
@@ -104,7 +101,7 @@ html {
   width: 100dvw;
   height: 100dvh;
   position: absolute;
-  z-index: 5;
+  z-index: 7;
   display: flex;
   align-items: center;
   vertical-align: center;
@@ -112,10 +109,10 @@ html {
   padding-top: 16vh;
   padding-bottom: 8vh;
   transition: all ease 0.5s;
-  /* background-color: rgba(0,0,0,40%); */
 }
 
 .konzept {
+  z-index: 7;
   margin: auto;
   width: 95dvw;
 }
@@ -163,7 +160,7 @@ a:hover {
 }
 
 #overlay {
-  z-index: 3;
+  z-index: 5;
   width: 100dvw;
   height: 100dvh;
   position: fixed;
@@ -173,13 +170,13 @@ a:hover {
 }
 
 #overlay.active {
-  z-index: 3;
+  z-index: 5;
   width: 100dvw;
   height: 100dvh;
   position: fixed;
   top: 0;
   background-color: rgb(0 0 0 / 50%);
-  opacity: 60%;
+  opacity: 100%;
 }
 
 #navbar {
@@ -334,7 +331,6 @@ text-decoration: none;
     right: 4%;
     top: 1%;
     transform: scale(2);
-    cursor: pointer;
   }
 
   #button4:hover {
@@ -346,7 +342,7 @@ text-decoration: none;
   .popupbg {
     position: fixed;
     height: 90dvh;
-    z-index: 5;
+    z-index: 1;
     margin-top: 50dvh;
     margin-left: 50dvw;
     transform: translate(-50%, -50%);
@@ -355,7 +351,7 @@ text-decoration: none;
 .popupbg.active {
   position: fixed;
   height: 90dvh;
-  z-index: 5;
+  z-index: 1;
   margin-top: -50dvh;
   margin-left: 50dvw;
   transform: translate(-50%, -50%);
@@ -369,7 +365,7 @@ text-decoration: none;
 .schrift {
   mix-blend-mode: multiply;
   position: fixed;
-  z-index: 5;
+  z-index: 2;
   width: 85%;
   padding-bottom: 10dvh;
   padding-top: 18dvh;
@@ -408,7 +404,6 @@ text-decoration: none;
     padding-top: 25vh;
     padding-bottom: 8vh;
     transition: all ease 0.5s;
-    /* background-color: rgba(0,0,0,40%); */
   }
   
   .konzept {

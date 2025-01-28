@@ -8,6 +8,45 @@ const viewer = new PhotoSphereViewer.Viewer({
   defaultZoomLvl: '20',
 });
 
+// Call the function with the path to the image
+toggleContentBasedOnImage('/assets/popup/scan.jpg');
+
+var popup = document.querySelector("#pop")
+var closepopup = document.querySelector("#button4")
+var sitenav = document.querySelector("#sitenav")
+var karte = document.querySelector(".popupbg")
+
+
+async function checkImageExists(imagePath) {
+  try {
+    const response = await fetch(imagePath, { method: 'HEAD' });
+    return response.ok; // true if the image exists
+  } catch (error) {
+    return false; // false if there was an error (e.g., 404)
+  }
+}
+
+// Function to toggle HTML based on image existence
+async function toggleContentBasedOnImage(imagePath) {
+  const contentDiv = document.getElementById('annonce');
+  const imageExists = await checkImageExists(imagePath);
+
+  if (imageExists) {
+ 
+  } else {
+    popup.classList.toggle('active');
+    sitenav.classList.toggle('active');
+    karte.classList.toggle('active');
+  }
+}
+
+closepopup.addEventListener("click", function() {
+  popup.classList.toggle('active');
+  sitenav.classList.toggle('active');
+  karte.classList.toggle('active');
+});
+
+
 
 
 //navigation triggers when there is no Pop-Up present

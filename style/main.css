@@ -676,6 +676,76 @@ text-decoration: none;
 
   @media screen and (min-width: 2560px) {
 
+
+  #pop {
+    display: block;
+    z-index: 5;
+    height: 100dvh;
+    width: 100dvw;
+    background-color: rgb(0 0 0 / 50%);
+    position: fixed;
+  }
+
+  #pop.active {
+    z-index: 0;
+    transform: all ease 0.25s;
+  }
+
+  #button4{
+    position: fixed;
+    right: 4%;
+    top: 1%;
+    transform: scale(2);
+  }
+
+  #button4:hover {
+    transform: scale(2.1);
+    transition: 0.125s;
+    cursor: pointer;
+  }
+
+  .popupbg {
+    position: fixed;
+    height: 90dvh;
+    z-index: 1;
+    margin-top: 50dvh;
+    margin-left: 50dvw;
+    transform: translate(-50%, -50%);
+}
+
+.popupbg.active {
+  position: fixed;
+  height: 90dvh;
+  z-index: 1;
+  margin-top: -50dvh;
+  margin-left: 50dvw;
+  transform: translate(-50%, -50%);
+  transition: all ease 0.3s;
+}
+
+.popupbg img {
+  height: 100%;
+}
+
+.schrift {
+  mix-blend-mode: multiply;
+  position: fixed;
+  z-index: 2;
+  width: 85%;
+  padding-bottom: 10dvh;
+  padding-top: 18dvh;
+  margin-left: 50%;
+  transform: translate(-50%,0);
+}
+
+#sitenav {
+  opacity: 0%;
+}
+
+#sitenav.active{
+  opacity: 100%;
+  transition: all ease 0.75s;
+}
     .show {
       margin-top: 100dvh;
       opacity: 0;

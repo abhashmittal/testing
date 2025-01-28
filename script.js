@@ -9,7 +9,7 @@ const viewer = new PhotoSphereViewer.Viewer({
 });
 
 // Call the function with the path to the image
-toggleContentBasedOnImage('/assets/popup/scan.jpg');
+toggleContentBasedOnImage('/popup/scan.jpg');
 
 var popup = document.querySelector("#pop")
 var closepopup = document.querySelector("#button4")

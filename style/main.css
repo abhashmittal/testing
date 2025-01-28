@@ -46,7 +46,7 @@ html {
 
   .popupbg {
     position: fixed;
-    height: 70dvh;
+    width: 90dvw;
     z-index: 1;
     margin-top: 50dvh;
     margin-left: 50dvw;
@@ -55,7 +55,7 @@ html {
 
 .popupbg.active {
   position: fixed;
-  height: 70dvh;
+  height: 90dvw;
   z-index: 1;
   margin-top: -50dvh;
   margin-left: 50dvw;
@@ -64,16 +64,17 @@ html {
 }
 
 .popupbg img {
-  height: 100%;
+  width: 100%;
 }
 
 .schrift {
   mix-blend-mode: multiply;
   position: fixed;
   z-index: 2;
-  width: 85%;
-  padding-bottom: 7dvh;
-  padding-top: 14dvh;
+  height: 90%;
+  padding-top: 12dvh;
+  padding-left: 7.5dvw;
+  padding-right: 7.5dvw;
   margin-left: 50%;
   transform: translate(-50%,0);
 }

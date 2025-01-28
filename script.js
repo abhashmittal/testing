@@ -9,7 +9,7 @@ const viewer = new PhotoSphereViewer.Viewer({
 });
 
 // Call the function with the path to the image
-toggleContentBasedOnImage('/popup/scan.jpg');
+toggleContentBasedOnImage('popup/scan.jpg');
 
 var popup = document.querySelector("#pop")
 var closepopup = document.querySelector("#button4")
@@ -22,7 +22,7 @@ async function checkImageExists(imagePath) {
     const response = await fetch(imagePath, { method: 'HEAD' });
     return response.ok; // true if the image exists
   } catch (error) {
-    return false; // false if there was an error (e.g., 404)
+    let toggleContentBasedOnImage = ('assets/double-trouble_23.png');
   }
 }
 
@@ -45,9 +45,6 @@ closepopup.addEventListener("click", function() {
   sitenav.classList.toggle('active');
   karte.classList.toggle('active');
 });
-
-
-
 
 //navigation triggers when there is no Pop-Up present
 var mybtn = document.querySelector("#button")

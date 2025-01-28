@@ -2,14 +2,20 @@ $(document).ready(function($){
   orientationChange();
 });
 
-// Call the function with the path to the image
-toggleContentBasedOnImage('/assets/popup/scan.jpg');
-
 const viewer = new PhotoSphereViewer.Viewer({
   container: document.querySelector('#viewer'),
   panorama: 'assets/preservice6.jpg',
   defaultZoomLvl: '20',
 });
+
+// Call the function with the path to the image
+toggleContentBasedOnImage('/assets/popup/scan.jpg');
+
+var popup = document.querySelector("#pop")
+var closepopup = document.querySelector("#button4")
+var sitenav = document.querySelector("#sitenav")
+var karte = document.querySelector(".popupbg")
+
 
 async function checkImageExists(imagePath) {
   try {
@@ -34,7 +40,6 @@ async function toggleContentBasedOnImage(imagePath) {
   }
 }
 
-
 closepopup.addEventListener("click", function() {
   popup.classList.toggle('active');
   sitenav.classList.toggle('active');
@@ -42,10 +47,7 @@ closepopup.addEventListener("click", function() {
 });
 
 
-var popup = document.querySelector("#pop")
-var closepopup = document.querySelector("#button4")
-var sitenav = document.querySelector("#sitenav")
-var karte = document.querySelector(".popupbg")
+
 
 //navigation triggers when there is no Pop-Up present
 var mybtn = document.querySelector("#button")

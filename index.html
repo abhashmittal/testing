@@ -10,6 +10,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style/main.css"/>
     <script type="module" src="script.js"></script>
+    <script>
+      // Call the function with the path to the image
+toggleContentBasedOnImage('/assets/popup/scan.jpg');
+
+var popup = document.querySelector("#pop")
+var closepopup = document.querySelector("#button4")
+var sitenav = document.querySelector("#sitenav")
+var karte = document.querySelector(".popupbg")
+
+
+async function checkImageExists(imagePath) {
+  try {
+    const response = await fetch(imagePath, { method: 'HEAD' });
+    return response.ok; // true if the image exists
+  } catch (error) {
+    return false; // false if there was an error (e.g., 404)
+  }
+}
+
+// Function to toggle HTML based on image existence
+async function toggleContentBasedOnImage(imagePath) {
+  const contentDiv = document.getElementById('annonce');
+  const imageExists = await checkImageExists(imagePath);
+
+  if (imageExists) {
+ 
+  } else {
+    popup.classList.toggle('active');
+    sitenav.classList.toggle('active');
+    karte.classList.toggle('active');
+  }
+}
+
+closepopup.addEventListener("click", function() {
+  popup.classList.toggle('active');
+  sitenav.classList.toggle('active');
+  karte.classList.toggle('active');
+});
+
+
+
+
+    </script>
     <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.147/build/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uevent@2/browser.min.js"></script>

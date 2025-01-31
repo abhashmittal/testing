@@ -37,6 +37,16 @@ async function toggleContentBasedOnImage(imagePath) {
   }
 }
 
+popup.addEventListener("click", function(){
+  if ($(".popupbg:hover").length !=0){
+  } else {
+    popup.classList.toggle('active');
+    sitenav.classList.toggle('active');
+    karte.classList.toggle('active');
+  }
+}
+)
+
 // Call the function with the path to the image
 toggleContentBasedOnImage('popup/scan.jpg');
 

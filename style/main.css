@@ -43,7 +43,7 @@ html {
 
   #pop.active {
     z-index: 0;
-    transform: all ease 0.3s;
+    transform: all ease 0.75s;
     opacity: 0%;
   }
 
@@ -75,7 +75,6 @@ html {
   margin-top: -50dvh;
   margin-left: 50dvw;
   transform: translate(-50%, -50%);
-  transition: all ease 0.11s;
 }
 
 .popupbg img {
@@ -348,7 +347,7 @@ text-decoration: none;
   #pop.active {
     z-index: 0;
     opacity: 0%;
-    transition: all ease 0.3s;
+    transition: all ease 0.75s;
   }
 
   #button4{
@@ -380,7 +379,6 @@ text-decoration: none;
   margin-top: -50dvh;
   margin-left: 50dvw;
   transform: translate(-50%, -50%);
-  transition: 0.11s;
 }
 
 .popupbg img {
@@ -723,7 +721,7 @@ text-decoration: none;
   #pop.active {
     z-index: 0;
     opacity: 0%;
-    transition: all ease 0.3s;
+    transition: all ease 0.75s;
   }
 
   #button4{
@@ -755,7 +753,6 @@ text-decoration: none;
   margin-top: -50dvh;
   margin-left: 50dvw;
   transform: translate(-50%, -50%);
-  transition: all ease 0.11s;
 }
 
 .popupbg img {

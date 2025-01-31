@@ -24,13 +24,10 @@ html {
 @media screen and (max-width: 480px) {
 
   #pop {
-    display: block;
-    z-index: 5;
-    height: 100dvh;
-    width: 100dvw;
-    background-color: rgb(0 0 0 / 50%);
-    position: fixed;
-    opacity: 100%;
+    z-index: 0;
+    transform: all ease 0.75s;
+    opacity: 0%;
+
   }
 
   #pop p{
@@ -42,9 +39,14 @@ html {
   }
 
   #pop.active {
-    z-index: 0;
-    transform: all ease 0.75s;
-    opacity: 0%;
+
+    display: block;
+    z-index: 5;
+    height: 100dvh;
+    width: 100dvw;
+    background-color: rgb(0 0 0 / 50%);
+    position: fixed;
+    opacity: 100%;
   }
 
   #button4{
@@ -63,18 +65,21 @@ html {
     position: fixed;
     height: 70dvh;
     z-index: 1;
-    margin-top: 50dvh;
+    margin-top: -50dvh;
     margin-left: 50dvw;
     transform: translate(-50%, -50%);
+    opacity: 0%;
 }
 
 .popupbg.active {
+
   position: fixed;
   height: 70dvh;
   z-index: 1;
-  margin-top: -50dvh;
+  margin-top: 50dvh;
   margin-left: 50dvw;
   transform: translate(-50%, -50%);
+  opacity: 100%;
 }
 
 .popupbg img {
@@ -93,12 +98,12 @@ html {
 }
 
 #sitenav {
-  opacity: 0%;
+  opacity: 100%;
+  transition: all ease 0.75s;
 }
 
 #sitenav.active{
-  opacity: 100%;
-  transition: all ease 0.75s;
+  opacity: 0%;
 }
 
 .show {
@@ -704,13 +709,10 @@ text-decoration: none;
 
 
   #pop {
-    display: block;
-    z-index: 5;
-    height: 100dvh;
-    width: 100dvw;
-    background-color: rgb(0 0 0 / 50%);
-    position: fixed;
-    opacity: 100%;
+    z-index: 0;
+    opacity: 0%;
+    transition: all ease 0.75s;
+
   }
 
   #pop p{
@@ -722,9 +724,13 @@ text-decoration: none;
   }
 
   #pop.active {
-    z-index: 0;
-    opacity: 0%;
-    transition: all ease 0.75s;
+    display: block;
+    z-index: 5;
+    height: 100dvh;
+    width: 100dvw;
+    background-color: rgb(0 0 0 / 50%);
+    position: fixed;
+    opacity: 100%;
   }
 
   #button4{
@@ -744,16 +750,17 @@ text-decoration: none;
     position: fixed;
     height: 90dvh;
     z-index: 1;
-    margin-top: 50dvh;
+    margin-top: -50dvh;
     margin-left: 50dvw;
     transform: translate(-50%, -50%);
+  
 }
 
 .popupbg.active {
   position: fixed;
   height: 90dvh;
   z-index: 1;
-  margin-top: -50dvh;
+  margin-top: 50dvh;
   margin-left: 50dvw;
   transform: translate(-50%, -50%);
 }
@@ -774,12 +781,12 @@ text-decoration: none;
 }
 
 #sitenav {
-  opacity: 0%;
+  opacity: 100%;
+  transition: all ease 0.75s;
 }
 
 #sitenav.active{
-  opacity: 100%;
-  transition: all ease 0.75s;
+  opacity: 0%;
 }
     .show {
       margin-top: 100dvh;

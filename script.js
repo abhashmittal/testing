@@ -19,7 +19,7 @@ async function checkImageExists(imagePath) {
     const response = await fetch(imagePath, { method: 'HEAD' });
     return response.ok; // true if the image exists
   } catch (error) {
-    let toggleContentBasedOnImage = ('assets/double-trouble_23.png');
+    let toggleContentBasedOnImage = ('popup/scan.jpg');
   }
 }
 

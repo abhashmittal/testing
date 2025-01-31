@@ -370,17 +370,17 @@ text-decoration: none;
     margin-top: -50dvh;
     margin-left: 50dvw;
     transform: translate(-50%, -50%);
-  
+    opacity: 0%;
 }
 
 .popupbg.active {
-
   position: fixed;
   height: 90dvh;
   z-index: 1;
   margin-top: 50dvh;
   margin-left: 50dvw;
   transform: translate(-50%, -50%);
+  opacity: 100%;
 }
 
 .popupbg img {

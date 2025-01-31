@@ -29,11 +29,11 @@ async function toggleContentBasedOnImage(imagePath) {
   const imageExists = await checkImageExists(imagePath);
 
   if (imageExists) {
- 
-  } else {
     popup.classList.toggle('active');
     sitenav.classList.toggle('active');
     karte.classList.toggle('active');
+  } else {
+
   }
 }
 

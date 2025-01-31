@@ -817,6 +817,7 @@ text-decoration: none;
     
     .as {
       width: 25%;
+      mix-blend-mode: screen;
     }
     
     
@@ -856,7 +857,7 @@ text-decoration: none;
       position: fixed;
       top: 100dvh;
       background-color: black;
-      z-index: 2;
+      z-index: 5;
       opacity: 0%;
     }
     
@@ -866,7 +867,7 @@ text-decoration: none;
       position: fixed;
       top: 0;
       background-color: black;
-      z-index: 2;
+      z-index: 5;
       opacity: 60%;
     }
     
@@ -940,7 +941,7 @@ text-decoration: none;
       top: 1.5dvh;
       position: fixed;
       margin-left: 50dvw;
-      z-index: 10;
+      z-index: 11;
       background-color: #0000ff;
       color: white;
       transform-origin: left center;
@@ -958,7 +959,7 @@ text-decoration: none;
       top: 1.5dvh;
       position: fixed;
       margin-left: 2.5dvw;
-      z-index: 10;
+      z-index: 11;
       background-color: #ff5100;
       transform: translate(0, 0);
       color: white;
@@ -974,7 +975,7 @@ text-decoration: none;
       top: 1.5dvh;
       position: fixed;
       margin-left: 2.5dvw;
-      z-index: 10;
+      z-index: 11;
       background-color: #ff5100;
       color: white;
       transform: scale(1.07);
@@ -988,7 +989,7 @@ text-decoration: none;
     }
     
     #button2 {
-      z-index: 10;
+      z-index: 11;
       background-color: #0000ff;
       color: white;
       border-radius: 25dvw;
@@ -1001,7 +1002,7 @@ text-decoration: none;
     }
 
     #button2:hover {
-      z-index: 10;
+      z-index: 11;
       background-color: #0000ff;
       color: white;
       border-radius: 25dvw;
@@ -1026,7 +1027,7 @@ text-decoration: none;
     
     #button3 {
       margin-left: auto;
-      z-index: 10;
+      z-index: 11;
       background-color: #0000ff;
       color: white;
       border-radius: 25dvw;
@@ -1039,7 +1040,7 @@ text-decoration: none;
 
     #button3:hover {
       margin-left: auto;
-      z-index: 10;
+      z-index: 11;
       background-color: #0000ff;
       color: white;
       border-radius: 25dvw;

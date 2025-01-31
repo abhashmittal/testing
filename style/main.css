@@ -323,7 +323,7 @@ text-decoration: none;
 
 }
 
-@media screen and (min-width: 480px) and (max-width: 2559px) {
+@media screen and (min-width: 480px) and (max-width: 2259px) {
 
 
   #pop {
@@ -697,7 +697,7 @@ text-decoration: none;
   
   }
 
-  @media screen and (min-width: 2560px) {
+@media screen and (min-width: 2260px) {
 
 
   #pop {
